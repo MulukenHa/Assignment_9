@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
-        .form{
+
+        .form {
             width: auto;
             height: 70%;
             background-color: lightgray;
@@ -18,11 +20,11 @@
             border-radius: 5px;
         }
 
-        label{
+        label {
             display: block;
         }
 
-        input{
+        input {
             width: 100%;
             padding-left: 7px;
             margin: 8px 0 10px 0;
@@ -40,32 +42,44 @@
             height: 40px;
         }
 
-        input[type=submit]{
+        input[type=submit] {
             display: block;
             background-color: green;
             color: white;
         }
 
-        .DropDown{
-            margin: 20px 20px 20px 0;
+
+
+        .MenuContainer {
+            position: relative;
+            display: inline-block;
         }
 
-        .DropDown button{
+        .MenuButton {
             background-color: green;
             width: 200px;
             height: 50px;
+            text-align: center;
             border: none;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
 
         .DropDownMenu {
-            display: none;            
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
         }
 
         .DropDownMenu a{
             display: block;
             padding: 8px;
-            width: 30%;
+            width: 200px;
             height: 30px;
             padding-left: 5px;
             background-color: lightgray;
@@ -73,18 +87,18 @@
             color: black;
         }
 
-        .DropDown:hover .DropDownMenu{
+        .MenuContainer:hover .DropDownMenu {
             display: block;
         }
-
     </style>
 </head>
+
 <body>
     <div class="form">
         <label for="FirstName">First Name</label>
-        <input type="text" name="FirstName"   placeholder="Your Name">
+        <input type="text" name="FirstName" placeholder="Your Name">
         <label for="LastName">Last Name</label>
-        <input type="text" name="LastName"   placeholder="Your Last Name">
+        <input type="text" name="LastName" placeholder="Your Last Name">
         <label for="Country">Country</label>
         <select name="Country">
             <option value="ET">Ethiopia</option>
@@ -343,12 +357,16 @@
 
     <div class="DropDown">
         <p>Hover over the button to see the available links</p>
-        <button>Drop Down</button>
-        <div class="DropDownMenu">
-            <a href="">Link 1</a>
-            <a href="">Link 2</a>
-            <a href="">Link 3</a>
+        <div class="MenuContainer">
+            <div class="MenuButton">Drop Down</div>
+            <div class="DropDownMenu">
+                <a href="">Link 1</a>
+                <a href="">Link 2</a>
+                <a href="">Link 3</a>
+            </div>
         </div>
     </div>
+
 </body>
+
 </html>
